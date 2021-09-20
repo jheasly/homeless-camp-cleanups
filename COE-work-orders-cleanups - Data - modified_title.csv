@@ -1,4 +1,4 @@
-ID,Code,Address/Intersection/Area,Latitude,Longitude,"Date of cleanup, inspection or posting",Staff hours,# staff members,Pieces of equipment used,Items to storage?,Hazmat,Yards of debris,Images?
+ID,Code,Address_Intersection_Area,Latitude,Longitude,Date_of_cleanup_inspection_or_posting,Staff_hours,no_staff_members,Pieces_of_equipment_used,Items_to_storage,Hazmat,Yards_of_debris,Images
 311641,SWM30,Ferry Street Bridge,44.0596951301109,-123.082046220394,Mar-20,0,1,0,Yes; expired,,0,Yes
 313430,SFS30,HWY 99/Roosevelt Blvd,44.0637608116944,-123.136140989819,Mar-20,7,4,3,No,,0,No
 314106,SFS30,Madison/Clark,44.0592893261506,-123.102555366524,Mar-20,12,4,3,No,Called NW Hazmat (feces),0,No
