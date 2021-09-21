@@ -31,7 +31,7 @@
     map.on('click', function(e) {
       // If the user clicked on one of your markers, get its information.
       var features = map.queryRenderedFeatures(e.point, {
-        layers: ['coe-work-orders-cleanups'] // replace with your layer name
+        layers: ['coe-modified-title-code'] // replace with your layer name
       });
       if (!features.length) {
         return;
@@ -47,7 +47,7 @@
     var popup = new mapboxgl.Popup({ offset: [0, -15] })
         .setLngLat(feature.geometry.coordinates)
         .setHTML(
-        '<h3>' + feature.properties.title + '</h3>' +
+        '<h3>Location: ' + feature.properties.Address_Intersection_Area + '</h3>' +
         '<p>' + feature.properties.Code + '</p>'
         )
         .addTo(map);
