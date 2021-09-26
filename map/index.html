@@ -12,7 +12,43 @@
     </style>
   </head>
   <body>
+
+    <style>
+      .legend {
+        background-color: #fff;
+        border-radius: 3px;
+        bottom: 30px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        font: 12px/20px 'Unify Sans', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+        padding: 10px;
+        position: absolute;
+        right: 10px;
+        z-index: 1;
+      }
+
+      .legend h4 {
+        margin: 0 0 10px;
+      }
+
+      .legend div span {
+        border-radius: 50%;
+        display: inline-block;
+        height: 10px;
+        margin-right: 5px;
+        width: 10px;
+      }
+    </style>
+
     <div id='map'></div>
+
+    <div id='cleanup-legend' class='legend'>
+      <h4>Type of work order</h4>
+      <div><span style='background-color: #727a9d;'></span>Camp in park</div>
+      <div><span style='background-color: #5d8a56;'></span>Camp on state-owned land</div>
+      <div><span style='background-color: #d9b06d;'></span>Inspections, warnings and cleanups in right of way</div>
+      <div><span style='background-color: #af655a;'></span>Inspections, warnings and cleanups in stormwater facilities, medians</div>
+    </div>
+
     <script>
     // The value for 'accessToken' begins with 'pk...'
     mapboxgl.accessToken = 'pk.eyJ1IjoianBoZWFzbHkiLCJhIjoiY2szYWZsYXc4MDA3NzNvbzhyN215cHo2OSJ9.lfTL54AR86f07RjqH8KRwg'; 
@@ -20,9 +56,13 @@
       container: 'map',
       // Replace YOUR_STYLE_URL with your style URL.
       style: 'mapbox://styles/jpheasly/ckrv45zxo54m217o30fbbhphs', 
-      center: [-123.122673, 44.060588],
+      center: [-123.0856309, 44.0476357],
       zoom: 10.7
     });
+
+    map.addControl(new mapboxgl.NavigationControl());
+    // disable map zoom when using scroll
+    map.scrollZoom.disable();
 
     /* 
     Add an event listener that runs
@@ -37,8 +77,6 @@
         return;
       }
       var feature = features[0];
-
-    // Code from the next step will go here.
 
     /* 
         Create a popup, specify its options 
