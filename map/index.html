@@ -30,7 +30,7 @@
         margin: 0 0 10px;
       }
 
-      .legend div span {
+    .legend div span {
         border-radius: 50%;
         display: inline-block;
         height: 10px;
@@ -86,7 +86,8 @@
         .setLngLat(feature.geometry.coordinates)
         .setHTML(
         '<h3>Location: ' + feature.properties.Address_Intersection_Area + '</h3>' +
-        '<p>' + feature.properties.Code + '</p>'
+        '<p>' + feature.properties.Code + '</p>' + 
+        '<p>' + feature.properties.Date_of_cleanup_inspection_or_posting + '</p>'
         )
         .addTo(map);
 
